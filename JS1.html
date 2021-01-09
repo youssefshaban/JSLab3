@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript">
+        function sum() {
+
+let user = {
+    name : 'ali',
+    age : 25 
+};
+
+Object.freeze(user); // this make the opject unextendable
+user.age = 30; // error in strict mode
+console.log(user.age);
+
+let user2 = {
+    name : 'ali',
+    age : 25 
+}
+
+let ali = user;
+console.log(Object.is(user,ali));
+console.log(Object.is(user,user2));
+
+console.log(Object.isFrozen(user2));
+console.log(Object.isFrozen(user));
+
+console.log(Object.isExtensible(user));
+
+Object.preventExtensions(ali);
+
+console.log(Object.isExtensible(ali));
+
+console.log(Object.isSealed(user2));
+
+Object.seal(ali);
+
+console.log(Object.isSealed(ali));
+
+const person = {
+    isHuman: "no",
+    printIntroduction: function() {
+      console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+    }
+  };
+  
+  const me = Object.create(person); // make instance from person 
+  
+  me.name = 'ahmed'; 
+  me.isHuman = "no";
+  
+  me.printIntroduction();
+
+console.log(Object.values(ali)); // print object as array
+console.log(Object.keys(me));
+
+			}
+        </script>
+    </head>
+    <body onload="sum();">
+    
+    </body>
+</html>

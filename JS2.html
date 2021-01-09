@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript">
+        function sum() {
+        	let fruits = ['Apple', 'Banana']
+        	// 1 loop
+        	console.log(fruits.length)
+        	fruits.forEach(function(item, index, array) {
+			  console.log(item, index)
+			})
+
+       		//2 shift
+       		let first = fruits.shift()
+       		// 3 unshift
+       		let newLength = fruits.unshift('Strawberry')
+       		// 4 indexOf
+       		let pos = fruits.indexOf('Strawberry')
+       		fruits.forEach(function(item, index, array) {
+			  console.log(item, index)
+			})
+			// 5 slice (copy)
+       		let shallowCopy = fruits.slice() 
+
+       		//6 reduce
+       		const array1 = [1, 2, 3, 4];
+			const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+			// 1 + 2 + 3 + 4
+			console.log(array1.reduce(reducer));
+			// expected output: 10
+
+			const array2 = [1, 4, 9, 16];
+
+			// 7 - map
+			const map1 = array2.map(x => x * 2);
+
+			console.log(map1);
+			// expected output: Array [2, 8, 18, 32]
+
+
+			const array3 = ['one', 'two', 'three'];
+			console.log('array3:', array3);
+			// expected output: "array1:" Array ["one", "two", "three"]
+			// 8 reversed
+			const reversed = array3.reverse();
+			console.log('reversed:', reversed);
+			// expected output: "reversed:" Array ["three", "two", "one"]
+
+			// Careful: reverse is destructive -- it changes the original array.
+			console.log('array3:', array3);
+			// expected output: "array1:" Array ["three", "two", "one"]
+			// 9 sort
+			const months = ['March', 'Jan', 'Feb', 'Dec'];
+			months.sort();
+			console.log(months);
+
+
+
+			const array4 = [1, 2, 3];
+			// 10 includes
+			console.log(array4.includes(2));
+			// 11 toString
+			console.log(array4.toString());
+			// 12 - join
+			const elements = ['Fire', 'Air', 'Water'];
+			console.log(elements.join('-'));
+
+
+			}
+        </script>
+    </head>
+    <body onload="sum();">
+    
+    </body>
+</html>
